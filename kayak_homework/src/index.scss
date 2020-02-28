@@ -5,12 +5,83 @@
   font-size: 14px;
   font-family: 'Lato', Arial, Helvetica, sans-serif;
 }
+html {
+  height: 100%;
+  background-image: url(./images/blue-clouds.jpg);
+}
 
 .search-page {
-  background-color: black;
-  width: 90vh;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  min-width: 300px;
   margin: 0 auto;
+  min-height: 100vh;
   .nav {
+    background: linear-gradient(to right, #ff822f, #b92500);
     height: 100px;
+    &__container {
+      display: flex;
+      padding: 20px 0;
+      margin: auto;
+      width: 95%;
+      height: 100%;
+      vertical-align: middle;
+      &__search {
+        display: flex;
+        flex-direction: row;
+        background-color: rgba(255,255,255,0.2);
+        height: 100%;
+        width: 95%;
+        margin-right: 10px;
+        &__movie {
+          filter: invert(100%);
+          margin: 0 10px;
+          height: 100%;
+          width: 30px;
+        }
+        &__input {
+          font-weight: bold;
+          background: transparent;
+          height: 100%;
+          width: 80%;
+          border: 0;
+          outline:none;
+          color: #000;
+          &::placeholder {
+            color: #fff;
+            position: relative;
+            ::after {
+              position: absolute;
+              left: 10px;
+              top: 2px;
+              content: attr(data-placeholder);
+              pointer-events: none;
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+      &__search-button {
+        cursor: pointer;
+        background-color: #fff;
+        height: 100%;
+        width: 60px;
+        &__icon {
+          padding: 10px;
+          filter: invert(52%) sepia(91%) saturate(914%) hue-rotate(338deg) brightness(103%) contrast(102%);
+        }
+        &:hover {
+          background-color: rgb(236, 236, 236);
+        }
+        &:active {
+          background-color: rgb(220, 220, 220);
+        }
+      }
+    }
+  }
+  .movies {
+    flex-grow: 1;
+    background-color: #fff;
   }
 }
