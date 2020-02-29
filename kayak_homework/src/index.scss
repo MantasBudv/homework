@@ -27,38 +27,57 @@ html {
       width: 95%;
       height: 100%;
       vertical-align: middle;
+      .search-list {
+        height: 100%;
+        width: 100%;
+      }
+      .dropdown-list {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 99%;
+        padding-left: 50px;
+        background-color: #fff;
+        border: 1px solid #D3D3D3;
+        box-shadow: 0px 2px 0px #D3D3D3;
+        &__item {
+          cursor: pointer;
+          vertical-align: center;
+          padding: 10px 0;
+          height: 100%;
+          width: 100%;
+          border: 0;
+          outline:none;
+          color: #000;
+          &__name {
+            font-weight: bold;
+          }
+          &__info {
+            font-size: 12;
+          }
+        }
+      }
       &__search {
         display: flex;
         flex-direction: row;
-        background-color: rgba(255,255,255,0.2);
         height: 100%;
-        width: 95%;
-        margin-right: 10px;
+        width: 99%;
         &__movie {
-          filter: invert(100%);
           margin: 0 10px;
           height: 100%;
           width: 30px;
         }
         &__input {
+          flex-grow: 1;
+          position: relative;
           font-weight: bold;
           background: transparent;
           height: 100%;
-          width: 80%;
           border: 0;
           outline:none;
           color: #000;
           &::placeholder {
             color: #fff;
-            position: relative;
-            ::after {
-              position: absolute;
-              left: 10px;
-              top: 2px;
-              content: attr(data-placeholder);
-              pointer-events: none;
-              opacity: 0.5;
-            }
           }
         }
       }
